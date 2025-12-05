@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti, mi amor</title>
+    <style>
+        /* ESTILOS GENERALES */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #fff0f5; /* Fondo rosa pálido */
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #d63384; /* Rosa oscuro */
+        }
+
+        /* SECCIONES */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .love-letter {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* GALERÍA DE FOTOS */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* BOTÓN Y SORPRESA */
+        .surprise-section {
+            margin: 60px 0 100px 0;
+        }
+
+        .btn-surprise {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-surprise:hover {
+            background-color: #b02a6b;
+        }
+
+        /* ANIMACIÓN DEL BOTÓN */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* CONTENIDO OCULTO (EL HOTEL) */
+        #hidden-gift {
+            display: none; /* Oculto al principio */
+            margin-top: 30px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #d63384;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hotel-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="hero">
+            <h1>Felices 4 añitos mi vida❤️</h1>
+            <p>Hice esta pequeña página para recordarte lo especial que sos para mi.</p>
+        </div>
+
+        <div class="love-letter">
+            <p>
+                Esta vez quería probar algo distinto y sorprenderte con algo hecho por mí, para que te quede de recuerdo. Te amo muchísimo. Estos años han sido increíbles, pero lo que más me emociona es el futuro: quiero que sigamos compartiendo nuevas experiencias, viajando hasta llenar el pasaporte y cumpliendo cada una de las metas que soñamos juntos. Gracias por ser mi compañera de vida.
+            </p>
+        </div>
+
+        <h2>Nuestros momentos</h2>
+        <div class="gallery">
+            <img src="img/foto1.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto2.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto3.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto4.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto5.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto6.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto7.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto8.JPG" alt="Foto con el amor de mi vida">
+            <img src="img/foto9.JPG" alt="Foto con el amor de mi vida">
+        </div>
+
+        <div class="surprise-section">
+            <p>Tengo un regalo más para vos...</p>
+            <button class="btn-surprise" onclick="revealGift()">🎁 Haz clic para ver tu sorpresa</button>
+            
+            <div id="hidden-gift">
+                <h2>¡Nos vamos de escapada! 🏨✨</h2>
+                <p>Prepara tus maletas, porque he reservado una noche especial solo para nosotros dos.</p>
+                <h3>Destino: Sofitel los Cardales</h3>
+                <p>Fecha: 27 de diciembre</p>
+                
+                <img src="https://images.trvl-media.com/lodging/3000000/2150000/2141900/2141875/8d039795.jpg?impolicy=resizecrop&rw=1200&ra=fit" class="hotel-img" alt="Hotel">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function revealGift() {
+            var gift = document.getElementById("hidden-gift");
+            var btn = document.querySelector(".btn-surprise");
+            
+            gift.style.display = "block";
+            btn.style.display = "none"; // Oculta el botón después de hacer clic
+            
+            // Efecto de confeti simple (emojis cayendo)
+            createConfetti();
+        }
+
+        function createConfetti() {
+            for(let i=0; i<50; i++) {
+                let confetti = document.createElement('div');
+                confetti.innerText = '❤️';
+                confetti.style.position = 'fixed';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10vh';
+                confetti.style.fontSize = Math.random() * 20 + 20 + 'px';
+                confetti.style.transition = 'top 3s ease-in, opacity 3s';
+                confetti.style.zIndex = '9999';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.style.top = '110vh';
+                    confetti.style.opacity = '0';
+                }, 100);
+            }
+        }
+    </script>
+</body>
+</html>
