@@ -117,6 +117,27 @@
             margin-top: 20px;
         }
 
+        /* MAPA RESPONSIVE */
+        .map-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -163,7 +184,9 @@
                 
                 <img src="https://images.trvl-media.com/lodging/3000000/2150000/2141900/2141875/8d039795.jpg?impolicy=resizecrop&rw=1200&ra=fit" class="hotel-img" alt="Hotel">
                 <h3>Ubicación:</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d422017.9030154152!2d-59.475517272949226!3d-34.273673071616564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb6538472f41c5%3A0x799839e309554907!2sSofitel%20La%20Reserva%20Cardales!5e0!3m2!1ses!2sar!4v1764890157469!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d422017.9030154152!2d-59.475517272949226!3d-34.273673071616564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb6538472f41c5%3A0x799839e309554907!2sSofitel%20La%20Reserva%20Cardales!5e0!3m2!1ses!2sar!4v1764890157469!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
 
