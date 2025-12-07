@@ -145,7 +145,7 @@
 
         /* Texto en la carta cerrada */
         .letter-inside::before {
-            content: 'Para ti\A💕\AMi amor';
+            content: 'Para vos\A💕\AMi amor';
             white-space: pre;
             position: absolute;
             top: 50%;
@@ -154,10 +154,9 @@
             font-size: 1.3em;
             color: #d63384;
             text-align: center;
-            font-family: 'Brush Script MT', cursive;
+            font-family: 'Brush Script MT';
             line-height: 1.5;
             opacity: 0;
-            transition: opacity 0.5s ease 0.5s;
         }
 
         /* Animación de la carta al abrir */
@@ -172,6 +171,14 @@
         /* Mostrar el texto solo cuando la carta está abierta */
         .envelope.opened .letter-inside::before {
             opacity: 1;
+            animation: fadeInOut 15s ease forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         .envelope-hint {
